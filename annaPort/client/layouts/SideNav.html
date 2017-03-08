@@ -1,0 +1,13 @@
+<template name="SideNav">
+	{{#if Template.subscriptionsReady}}
+		<nav class="side-nav">
+			<ul>
+				{{#each projects}}
+					<li><a href="/project/{{_id}}">{{name}}</a></li>
+				{{/each}}
+			</ul>
+		</nav>
+	{{else}}
+	  <p>Loading...</p>
+	{{/if}}
+</template>

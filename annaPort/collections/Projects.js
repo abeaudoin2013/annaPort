@@ -10,6 +10,9 @@ Projects.allow({
 	// if user Id exists
 	insert: function (userId, doc) {
 		return !!userId;
+	},
+	update: function (userId, doc) {
+		return !!userId
 	}
 });
 
@@ -44,6 +47,18 @@ ProjectSchema = new SimpleSchema({
       }
     }
   }
+});
+
+Meteor.methods({
+	updateProject: function (id, obj) {
+		Projects.update(id, {
+			$set: {
+				name: obj.name,
+				desc: obj.desc,
+				pictures: obj.pics
+			}
+		})
+	}
 });
 
 Projects.attachSchema(ProjectSchema);
