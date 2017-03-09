@@ -50,15 +50,13 @@ ProjectSchema = new SimpleSchema({
 });
 
 Meteor.methods({
-	updateProject: function (id, obj) {
-		Projects.update(id, {
-			$set: {
-				name: obj.name,
-				desc: obj.desc,
-				pictures: obj.pics
-			}
-		})
+	deleteProject: function (id) {
+		Projects.remove(id);
+	},
+	deleteImage: function (id) {
+		Images.remove(id);
 	}
-});
+})
+
 
 Projects.attachSchema(ProjectSchema);

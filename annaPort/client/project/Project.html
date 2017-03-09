@@ -5,20 +5,15 @@
 			<p>{{project.desc}}</p>
 			<!-- pictures -->
 			<button id="edit-project" data-project="{{project}}">Edit Project</button>
-
-			<div class="update-project-container">
-
-				{{#autoForm id="updateProjectForm" type=formType collection="Projects" doc=project}}
-				  {{> afQuickField name="name" id="update-name"}}
-				  {{> afQuickField name="desc" id="update-desc"}}
-				  {{> afQuickField name="pictures" id="update-pictures"}}
-				  
-				  <div class="form-group">
-				    <button type="submit" class="btn btn-primary" id="submit-update">Submit</button>
-				  </div>
-			  
-			  {{/autoForm}}
-			</div>
+			
+			{{#if $.Session.get 'editMode'}}
+				<div class="update-project-container">
+					{{> quickForm id="updateProjectForm" collection="Projects" type="update" doc=project}}
+					
+				</div>
+			{{/if}}
+			<i class="fa fa-pencil"></i>
+			<i class="fa fa-trash"></i>
 		</article>
 	{{else}}
 	  <p>Loading...</p>

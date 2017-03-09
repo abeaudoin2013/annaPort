@@ -7,10 +7,6 @@ Template.Project.onCreated(function () {
 	});
 });
 
-Template.Project.onRendered(function () {
-	$(".update-project-container").hide();
-})
-
 Template.Project.helpers({
 	project: () => {
 		var id = FlowRouter.getParam('id');
@@ -19,30 +15,18 @@ Template.Project.helpers({
 });
 
 Template.Project.events({
-	'click #edit-project': () => {
-		$(".update-project-container").show();
-	},
-	'submit #updateProjectForm': (e) => {
-		// prevent form from submitting.
-		// set jquert form, set object to send, array for pictures, and get Id
-		e.preventDefault();
-		var $form = $(e.target);
-		var o = {};
-		var p = [];
+	'click .fa-trash' : function () {
 		var id = FlowRouter.getParam('id');
-
-		o.name = $("#update-name").val();
-		o.desc = $("#update-desc").val();
-		var liPics = $form.find(".list-group").find(".autoform-array-item");
-
-		liPics.each(function(i, li) {
-			p.push($(li).find("input").val());
-		});
-
-		o.pics = p;
-		
-		Meteor.call('updateProject', id, o);
-		$form.hide();
+		var p = Projects.findOne({_id: id});
+		var pics = p.pictures;
+		pics.forEach(function (pic, i) {
+			Meteor.call('deleteImage', pic);
+		})
+	  Meteor.call('deleteProject', id);
+	  FlowRouter.go('home-about');
+	},
+	'click .fa-pencil' : function () {
+		Session.set('editMode', !Session.get('editMode'));
 	}
 });
 
