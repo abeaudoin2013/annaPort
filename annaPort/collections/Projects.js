@@ -23,7 +23,10 @@ ProjectSchema = new SimpleSchema({
 	},
 	desc: {
 		type: String,
-		label: "Description"
+		label: "Description",
+		autoform: {
+			rows: 5
+		}
 	},
 	author: {
 		type: String,

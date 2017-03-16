@@ -1,0 +1,126 @@
+@import 'vars.styl'
+@import 'keyframes.styl'
+
+.side-nav
+  width 100%
+  background-color rgba(0, 0, 0, .8)
+  position fixed
+  margin-top 225px
+  padding-top 25px
+  padding-bottom 25px
+  i
+    dispaly none
+  ul
+    padding 0
+    margin 0
+    li
+      list-style-type none
+      font-size 34px
+      color #fff
+      text-align center
+      text-transform uppercase
+      letter-spacing 2px
+      a
+        color #fff
+        cursor pointer
+        text-decoration none
+        margin 0 -10px 0 0
+      a:hover
+        color #fff
+        text-decoration none
+      a:focus
+        color #fff
+        text-decoration none
+      a:active
+        color #fff
+        text-decoration none
+    .login-circle
+      text-align right
+      height 25px
+      i
+	      font-size 20px
+	      vertical-align top
+	      margin-top 10px
+	      margin-right 10px
+    .login-blue
+      color $blue
+      i
+	      font-size 20px
+	      vertical-align top
+	      margin-top 10px
+	      margin-right 10px
+    .login-red
+      color $red
+      i
+	      font-size 20px
+	      vertical-align top
+	      margin-top 10px
+	      margin-right 10px
+    .project-container
+      width 50%
+      min-width 300px
+      margin 25px auto
+      border 2px solid #fff
+      #projects
+        cursor pointer
+      .close-projects
+        font-size 2em;
+        float right;
+        margin 10px -15px 0 0;
+        color $red !important
+      .slideDown
+        animation slideDown .5s .5s ease 1 both
+      .slideUp
+        animation slideUp .5s ease 1 forwards
+      .hide
+        display none
+      .project
+        cursor pointer
+    .go-up
+      animation goUp .5s ease 1 forwards
+    .go-down
+      animation goDown .5s .5s ease 1 both
+    .anna-box
+      width 50%
+      min-width 300px
+      margin 25px auto
+      border 2px solid #fff
+      .a-e-o
+        color #fff
+        text-align center
+        text-transform uppercase
+        margin -11px auto -5px auto;
+        width 135px;
+        background-color rgba(143, 91, 91, .5)
+      li
+        list-style-type none
+        font-size 34px
+        color #fff
+        cursor pointer
+        text-align center
+        text-transform uppercase
+        letter-spacing 2px
+        padding 5px 0px
+.nav-closed
+  overflow hidden
+  animation navClosed .25s ease 1 forwards, weirdMargin 1s ease infinite
+  float left
+  ul
+    display none
+  i
+    display block
+    color #fff
+    text-align center
+    font-size 3em
+    margin-top 8px
+    transition color .5s
+  i:hover
+    color $red
+    cursor pointer  
+.nav-open
+  overflow hidden
+  animation navOpen .25s ease 1 forwards
+  ul
+    display block
+  i
+    display none

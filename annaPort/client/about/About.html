@@ -1,3 +1,15 @@
 <template name="About">
-	<h1>Hi I'm Anna</h1>
+	<div id="main">
+		<div class="about name">Anna Lublina</div>
+		<div class="about description">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quis, perspiciatis facere ad aspernatur molestiae culpa. Ducimus laudantium, neque esse distinctio, temporibus, quae architecto dicta numquam unde, pariatur placeat atque.
+		</div>
+		<div class="background-image-container">
+			{{#each images}}
+
+				<div class="background-images" style="background: url({{fileURL this}}); background-repeat: no-repeat; background-size: cover; background-position: center; width: {{percentage}}"></div>
+			<!-- <iframe src="//giphy.com/embed/MpeOSiDpqOfS0" width="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/scorpiondagger-scorpiondagger-jesus-dj-MpeOSiDpqOfS0">via GIPHY</a></p> -->
+			{{/each}}
+		</div>
+	</div>
 </template>

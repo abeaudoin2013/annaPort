@@ -1,10 +1,32 @@
 <template name="SideNav">
+	
 	{{#if Template.subscriptionsReady}}
-		<nav class="side-nav">
+		<nav class="side-nav {{navToggle}}">
+			<i class="fa fa-circle-o-notch" aria-hidden="true"></i>
 			<ul>
-				{{#each projects}}
-					<li><a href="/project/{{_id}}">{{name}}</a></li>
-				{{/each}}
+				{{#if param}}
+				  <li><a href="/">home</a></li>
+				{{/if}}
+				
+				<div class="project-container">
+					<li id="projects" class="go-down">projects</li>
+
+					  {{#each projects}}
+					    <div class="project-box">
+								<li style="background-color: {{randomColor}}; overflow:hidden" class="project {{slide}}"><a href="/project/{{_id}}">{{name}}</a></li>
+							</div>
+						{{/each}}
+
+				</div>
+				
+				{{#if admin}}
+				  <div class="anna-box">
+				  	<p class="a-e-o">Anna's Eyes Only</p>
+					  <li><a href="/new-project">New Project</a></li>
+					  <li><a href="/admin/dashboard">Dashboard</a></li>
+						<li class="logout">Logout</li>
+				  </div>
+				{{/if}}
 			</ul>
 		</nav>
 	{{else}}

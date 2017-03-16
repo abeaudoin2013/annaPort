@@ -18,8 +18,12 @@ es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers.
 ecmascript@0.6.1              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.1            # Server-side component of the `meteor shell` command
 
+accounts-base
+accounts-password
+useraccounts:unstyled
 kadira:flow-router
 kadira:blaze-layout
+aldeed:template-extension
 erasaur:meteor-lodash
 stolinski:stylus-multi
 fortawesome:fontawesome
@@ -28,8 +32,6 @@ fastclick
 raix:handlebar-helpers
 aldeed:collection2
 aldeed:autoform
-accounts-ui
-accounts-password
 matb33:bootstrap-glyphicons
 msavin:jetsetter
 zimme:active-route
@@ -38,3 +40,5 @@ ostrio:files
 ostrio:autoform-files
 meteortoys:allthings
 check
+alanning:roles
+mizzao:jquery-ui

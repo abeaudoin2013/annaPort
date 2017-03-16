@@ -1,0 +1,86 @@
+@import 'vars.styl'
+
+.project-page
+  width 35%
+  float left
+  display inline-block
+  margin 25px 25px 25px 75px;
+  .name-desc-container
+    width 100%
+    display inline-block
+    min-width 300px
+    .project-name
+      margin 0
+      font-size 38px
+      font-weight 700
+      text-transform uppercase
+    .project-description
+      font-size 17px
+      letter-spacing 1px
+  .edit-container
+    display block
+    width 100%
+    margin 15px 0 0 0
+    min-width 300px
+    .edit-button
+      width 55px
+      height 55px
+      border 2px solid #000
+      margin 0 10px 0 0
+      padding 10px 0 0 0
+      text-align center
+      font-size 2em
+      cursor pointer
+      transition .5s all
+    .edit-button:hover
+      background-color #000
+      color #fff
+.project-pictures
+  width 51%
+  display inline-block
+  margin 25px 75px 25px 25px
+  .project-pictures-container
+    width 100%
+    margin-top 30px
+    height 100vh
+    .project-picture
+      display inline-block
+      float left
+      cursor pointer
+      transform rotate(25deg)
+      height 80vh
+  .active
+    animation active .5s forwards
+    position fixed
+    top 0
+    z-index 1000
+    width 100% !important
+    left 0
+    height 100vh
+    .project-picture
+      animation picture-rotate .5s forwards, picture-grow .75s forwards
+      background-size contain !important
+      float none
+      display block
+      margin-left auto
+      margin-right auto
+  .in-between
+    position fixed
+    top 0
+    left 0
+    height 100vh
+    width 100%
+    z-index 1000
+    animation inactive .5s forwards
+    .project-picture
+      animation picture-rotate-back .5s forwards
+      margin-left auto
+      margin-right auto
+      float none
+      background-size cover !important
+      display block
+  .inactive
+    .project-picture
+    	animation slide-down .5s forwards
+.clearfix
+  clear both

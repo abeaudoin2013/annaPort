@@ -1,19 +1,34 @@
 <template name="Project">
 	{{#if Template.subscriptionsReady}}
-		<article class="project">
-			<h3>{{project.name}}</h3>
-			<p>{{project.desc}}</p>
+		<article class="project-page">
+			<div class="name-desc-container">
+				<h1 class="project-name">{{project.name}}</h1>
+				<p class="project-description">{{project.desc}}</p>
+			</div>
 			<!-- pictures -->
-			<button id="edit-project" data-project="{{project}}">Edit Project</button>
-			
-			{{#if $.Session.get 'editMode'}}
-				<div class="update-project-container">
-					{{> quickForm id="updateProjectForm" collection="Projects" type="update" doc=project}}
-					
-				</div>
+			{{#if isInRole 'admin'}}
+				
+				{{#if editMode}}
+					<div class="update-project-container">
+						{{> quickForm id="updateProjectForm" collection="Projects" type="update" doc=project}}
+						
+					</div>
+				{{/if}}
+				<div class="edit-container">
+					<i class="fa fa-pencil edit-button"></i>
+					<i class="fa fa-trash edit-button"></i>
+			  </div>
 			{{/if}}
-			<i class="fa fa-pencil"></i>
-			<i class="fa fa-trash"></i>
+		</article>
+		<article class="project-pictures">
+			<div class="project-pictures-container">
+				{{#each project.pictures}}
+				  <div class="project-picture-container inactive">
+						<div class="project-picture" style="background: url({{link this}}); background-repeat: no-repeat; background-size: cover; background-position: center; width:{{percentage project.pictures}}"></div>
+					</div>
+				{{/each}}
+				<div class="clearfix"></div>
+			</div>
 		</article>
 	{{else}}
 	  <p>Loading...</p>
