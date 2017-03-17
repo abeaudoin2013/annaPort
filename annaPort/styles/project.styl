@@ -81,6 +81,46 @@
       display block
   .inactive
     .project-picture
-    	animation slide-down .5s forwards
+      animation slide-down .5s forwards
+@media screen and (max-width: 1429px)
+  .project-pictures
+    width 45%
+@media screen and (max-width: 1000px)
+  .project-pictures
+    width 40%
+@media screen and (max-width: 800px)
+  .project-page
+    width 90%
+    min-width 300px
+    float none
+    display block
+    margin 25px auto
+    .name-desc-container
+      .project-name
+        text-align center
+      .project-description
+        text-align center
+  .project-pictures
+    display block
+    float none
+    width 90%
+    min-width 300px
+    margin 0 auto
+    .project-pictures-container
+      .project-picture-container
+        margin-bottom 5px
+        padding-bottom 5px
+        border-bottom 1px solid $gray
+        .project-picture
+          display block
+          float none
+          margin 0 auto
+          height 100px
+          width 100% !important
+          transform rotate(0deg)
+      .active
+        .project-picture
+          margin-top 50px
+          height 400px
 .clearfix
   clear both

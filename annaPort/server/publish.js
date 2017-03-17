@@ -15,3 +15,6 @@ Meteor.publish('allUsers', function () {
 	}
 	
 });
+Meteor.publish('newsletters', function () {
+	return Newsletters.find({});
+});

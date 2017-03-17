@@ -1,21 +1,23 @@
 <template name="Dashboard">
-	{{#if isInRole 'admin'}}
-		<h3>Welcome to Dashboard</h3>
-		<table>
-			
-			<tr>
-				<th>First Name</th>
-				<th>Email</th>
-			</tr>
-			{{#each users}}
-				<tr>
-					<td>{{profile.firstName}}</td>
-					<td>{{userEmail}}</td>
-				</tr>
-			{{/each}}
-		</table>
-		ADD ABILITY TO SEND EMAIL
-	{{else}}
-	  <p>Not authorized</p>
+	{{#if Template.subscriptionsReady}}
+		<div class="dashboard-container">
+			{{#if isInRole 'admin'}}
+				<h1 class="dashboard-title">These People Receive Your Newsletter</h1>
+				<table class="dashboard-table">
+					
+					<tr>
+						<th>Email</th>
+					</tr>
+					{{#each users}}
+						<tr>
+							<td>{{userEmail}}</td>
+						</tr>
+					{{/each}}
+				</table>
+				
+			{{else}}
+			  <p>Not authorized</p>
+			{{/if}}
+		</div>
 	{{/if}}
 </template>

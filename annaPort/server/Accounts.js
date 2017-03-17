@@ -5,6 +5,7 @@ var postSignUp = function (userId, info) {
 	if (info.profile.emailList === true) {
 		Roles.addUsersToRoles(userId, 'emailList');
 	}
+	FlowRouter.go('/');
 }
 
 AccountsTemplates.configure({

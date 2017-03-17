@@ -5,6 +5,7 @@
   width 100%
   background-color rgba(0, 0, 0, .8)
   position fixed
+  z-index 8000
   margin-top 225px
   padding-top 25px
   padding-bottom 25px
@@ -116,7 +117,15 @@
     transition color .5s
   i:hover
     color $red
-    cursor pointer  
+    cursor pointer
+@media screen and (max-width: 750px)
+  .side-nav
+    max-height 250px
+    overflow-y scroll !important
+    margin-top 120px
+  .nav-closed
+    right 0
+    animation navClosed .25s ease 1 forwards, weirdMarginRight 1s ease infinite
 .nav-open
   overflow hidden
   animation navOpen .25s ease 1 forwards

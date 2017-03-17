@@ -5,13 +5,7 @@ Images = new FilesCollection({
     if (this.userId) {
       var user = this.user();
       if (Roles.userIsInRole(user, 'admin')) {
-        // Allow removal only if
-        // current user is signed-in
-        // and has role is `admin`
 
-        // FIND PROJECT COLLECTION BY IMAGE ID
-        // UPDATE PICTURES ARRAY IN PROJECT COLLECTION
-        // TO PULL DELETED PICTURE
         var imgId = cursor._selector;
         var project = Projects.findOne({pictures: {$in: [imgId]}});
         var p_id = project._id;

@@ -1,6 +1,7 @@
 <template name="Login">
 	{{#if currentUser}}
 	  <h3 style="text-align: center; text-transform: uppercase;">You are logged in</h3>
+	  {{redirect}}
 	{{else}}
 	  {{> atForm}}
 	{{/if}}

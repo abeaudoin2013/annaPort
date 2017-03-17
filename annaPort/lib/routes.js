@@ -24,6 +24,13 @@ FlowRouter.route('/login', {
 	}
 });
 
+FlowRouter.route('/contact', {
+	name: 'contact',
+	action() {
+		BlazeLayout.render('MainLayout', {main: 'Contact'})
+	}
+});
+
 FlowRouter.route('/image-upload', {
 	name: 'image-upload',
 	action() {

@@ -1,14 +1,14 @@
 Template.Dashboard.onCreated(function () {
 	this.autorun(() => {
-		this.subscribe('allUsers');
+		this.subscribe('newsletters');
 	});
 });
 
 Template.Dashboard.helpers({
 	users: function () {
-		return Roles.getUsersInRole('emailList');
+		return Newsletters.find();
 	},
 	userEmail: function () {
-		return this.emails[0].address;
+		return this.email;
 	}
 })
