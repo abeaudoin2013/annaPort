@@ -14,3 +14,9 @@ Meteor.methods({
 });
 
 Newsletters.attachSchema(NewsletterSchema);
+
+Meteor.methods({
+	deleteNewsletter: function (id) {
+		Newsletters.remove(id);
+	}
+});

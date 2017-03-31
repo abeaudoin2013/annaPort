@@ -7,10 +7,12 @@
 					
 					<tr>
 						<th>Email</th>
+						<th></th>
 					</tr>
 					{{#each users}}
 						<tr>
-							<td>{{userEmail}}</td>
+							<td class="newsletter-email">{{userEmail}}</td>
+							<td class="delete-user">Delete?</td>
 						</tr>
 					{{/each}}
 				</table>
@@ -18,6 +20,13 @@
 			{{else}}
 			  <p>Not authorized</p>
 			{{/if}}
+		</div>
+		<div id="delete-user-modal">
+			<div class="inner-container">
+				<h1 class="delete-user-text">Are you sure you want to remove this user from your newsletter list?</h1>
+				<button class="delete-user-btn" id="delete-user-yes">Yes</button>
+				<button class="delete-user-btn" id="delete-user-no">No</button>
+			</div>
 		</div>
 	{{/if}}
 </template>

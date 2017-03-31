@@ -2,18 +2,21 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '1.2.3.4',
+      host: '138.197.101.26',
       username: 'root',
       // pem: './path/to/pem'
-      // password: 'server-password'
+      password: 'Bubblechick1'
       // or neither for authenticate from ssh-agent
     }
   },
 
   meteor: {
     // TODO: change app name and path
-    name: 'app',
-    path: '../app',
+    name: 'AnnaLublina',
+    path: '.',
+    volumes: {
+      '/images':'/images'
+    },
 
     servers: {
       one: {},
@@ -22,11 +25,10 @@ module.exports = {
     buildOptions: {
       serverOnly: true,
     },
-
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://app.com',
+      ROOT_URL: 'http://138.197.101.26',
       MONGO_URL: 'mongodb://localhost/meteor',
     },
 
@@ -40,7 +42,7 @@ module.exports = {
     // for your app to start
     // Add 30 seconds if the server has 512mb of ram
     // And 30 more if you have binary npm dependencies.
-    deployCheckWaitTime: 60,
+    deployCheckWaitTime: 120,
 
     // Show progress bar while uploading bundle to server
     // You might need to disable it on CI servers

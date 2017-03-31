@@ -1,6 +1,9 @@
 Images = new FilesCollection({
   collectionName: 'Images',
+  storagePath: '../images',
   allowClientCode: true, // Required to let you remove uploaded file
+  permissions: 0774,
+	parentDirPermissions: 0774,
   onBeforeRemove: function (cursor) {
     if (this.userId) {
       var user = this.user();
@@ -74,7 +77,7 @@ Meteor.methods({
 	deleteImage: function (id) {
 		Images.remove(id);
 	}
-})
+});
 
 
 Projects.attachSchema(ProjectSchema);
