@@ -1,0 +1,20 @@
+<template name="ImageManager">
+	{{#if Template.subscriptionsReady}}
+		{{#if isInRole 'admin'}}
+		  {{> ImageUpload}}
+		  <div class="images-container">
+				{{#each images}}
+					<div class="image" id="{{_id}}" style="background:url({{link this}}); background-repeat: no-repeat; background-size: cover; width: 20%; min-width: 300px; display: inline-block; height: 250px; margin: 10px; float: left;">
+						<div class="delete-container">
+							<div class="delete-sub-container">
+								<i class="fa fa-trash"></i>
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		{{else}}
+		  <h1>You are not authorized to be here. Please get a life.</h1>
+		{{/if}}
+	{{/if}}
+</template>

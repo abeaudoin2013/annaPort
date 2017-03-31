@@ -18,7 +18,7 @@ Template.Project.helpers({
 		return Template.instance().editMode.get();
 	},
 	link: function (img) {
-		var image = Images.findOne({_id: img})
+		var image = Images.findOne({_id: img});
 		return image.link();
 	},
 	percentage: function (pics) {  

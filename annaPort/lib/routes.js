@@ -31,13 +31,6 @@ FlowRouter.route('/contact', {
 	}
 });
 
-FlowRouter.route('/image-upload', {
-	name: 'image-upload',
-	action() {
-		BlazeLayout.render('MainLayout', {main: 'ImageUpload'})
-	}
-});
-
 FlowRouter.route('/project/:id', {
 	name: 'project',
 	action() {
@@ -54,5 +47,11 @@ adminRoutes.route('/dashboard', {
 	name: 'dashboard',
 	action() {
 		BlazeLayout.render('MainLayout', {main: 'Dashboard'})
+	}
+})
+
+adminRoutes.route('/images-manager', {
+	action() {
+		BlazeLayout.render('MainLayout', {main: 'ImageManager'})
 	}
 })

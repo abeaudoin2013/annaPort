@@ -1,8 +1,15 @@
 <template name="ImageUpload">
-  {{#with currentUpload}}
-    Uploading <b>{{file.name}}</b>:
-    <span id="progress">{{progress.get}}%</span>
-  {{else}}
-    <input id="fileInput" type="file" />
-  {{/with}}
+	{{#if isInRole 'admin'}}
+	  <h1 class="image-upload-title">Welcome to the image manager. You can upload/delete images here. Have a blast.</h1>
+	  <div class="image-upload-container">
+		  {{#with currentUpload}}
+		    Uploading <b>{{file.name}}</b>:
+		    <span id="progress">{{progress.get}}%</span>
+		  {{else}}
+		    <input id="fileInput" type="file" />
+		  {{/with}}
+	  </div>
+	{{else}}
+	  <h1>You are not authorized to be on this page. Please get a life.</h1>
+	{{/if}}
 </template>

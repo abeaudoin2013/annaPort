@@ -5,7 +5,7 @@ module.exports = {
       host: '138.197.101.26',
       username: 'root',
       // pem: './path/to/pem'
-      password: 'Bubblechick1'
+      password: '*********'
       // or neither for authenticate from ssh-agent
     }
   },
@@ -35,6 +35,7 @@ module.exports = {
     docker: {
       // change to 'kadirahq/meteord' if your app is not using Meteor 1.4
       image: 'abernix/meteord:base',
+      // 
       // imagePort: 80, // (default: 80, some images EXPOSE different ports)
     },
 
