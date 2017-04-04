@@ -1,5 +1,3 @@
-var sanitizeHtml = require('sanitize-html');
-
 Template.Project.onCreated(function () {
 	this.editMode = new ReactiveVar(false);
 	var self = this;
