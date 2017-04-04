@@ -1,7 +1,7 @@
 <template name="NewProject">
 	{{#if isInRole 'admin'}}
-		<h1>Adda project</h1>
 		<div class="new-project-container">
+			<h1>Add a project</h1>
 			{{> quickForm collection="Projects" id="insertProjectForm" type="insert" class="new-project-form"}}
 		</div>
 	{{else}}

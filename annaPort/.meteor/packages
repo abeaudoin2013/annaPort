@@ -43,3 +43,5 @@ check@1.2.5
 alanning:roles
 mizzao:jquery-ui
 abernix:standard-minifier-js
+twbs:bootstrap
+mpowaga:autoform-summernote

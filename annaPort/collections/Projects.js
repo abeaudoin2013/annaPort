@@ -43,8 +43,22 @@ ProjectSchema = new SimpleSchema({
 		type: String,
 		label: "Description",
 		autoform: {
-			rows: 5
-		}
+      afFieldInput: {
+        type: 'summernote',
+        class: 'editor', // optional
+        settings: {
+        	height: 300,
+        	toolbar: [
+				    ['style', ['bold', 'italic', 'underline', 'clear']],
+				    ['font', ['strikethrough', 'superscript', 'subscript']],
+				    ['fontsize', ['fontsize']],
+				    ['color', ['color']],
+				    ['para', ['ul', 'ol', 'paragraph']],
+				    ['height', ['height']]
+				  ]
+        }
+      }
+    }
 	},
 	author: {
 		type: String,

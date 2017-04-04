@@ -1,3 +1,5 @@
+var sanitizeHtml = require('sanitize-html');
+
 Template.Project.onCreated(function () {
 	this.editMode = new ReactiveVar(false);
 	var self = this;
@@ -5,9 +7,10 @@ Template.Project.onCreated(function () {
 		var id = FlowRouter.getParam('id');
 		self.subscribe('files.images.all');
 		self.subscribe('project', id);
+		
 	});
-});
 
+});
 
 Template.Project.helpers({
 	project: () => {
