@@ -12,9 +12,11 @@
 					<li id="projects" class="go-down">projects</li>
 
 					  {{#each projects}}
-					    <div class="project-box">
-								<li style="background-color: {{randomColor}}; overflow:hidden" class="project {{slide}}"><a href="/project/{{_id}}">{{name}}</a></li>
-							</div>
+					    {{#if isVisible this}}
+						    <div class="project-box">
+									<li style="background-color: {{randomColor}}; overflow:hidden" class="project {{slide}}"><a href="/project/{{_id}}">{{name}}</a></li>
+								</div>
+						  {{/if}}
 						{{/each}}
 
 				</div>
@@ -34,8 +36,20 @@
 					  <li><a href="/new-project">New Project</a></li>
 					  <li><a href="/admin/dashboard">Dashboard</a></li>
 					  <li><a href="/admin/images-manager">Images Manager</a></li>
+						
+						<li id="invisible-projects">invisible projects</li>
+						<div class="invisible-projects-box">
+						  {{#each projects}}
+						    {{#if isInvisible this}}
+							    <div class="invisible-project-box">
+										<li style="background-color: {{randomColor}}; overflow:hidden" class="project "><a href="/project/{{_id}}">{{name}}</a></li>
+									</div>
+							  {{/if}}
+							{{/each}}
+						</div>
 						<li class="logout">Logout</li>
 				  </div>
+
 				{{/if}}
 			</ul>
 		</nav>

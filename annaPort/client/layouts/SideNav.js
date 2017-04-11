@@ -30,6 +30,20 @@ Template.SideNav.helpers({
 			return 'slideUp'
 		}
 	},
+	isVisible: (project) => {
+		if (project.isVisible === "invisible") {
+			return null;
+		} else if (project.isVisible === "visible" || project.isVisible === undefined) {
+			return true;
+		}
+	},
+	isInvisible: (project) => {
+		if (project.isVisible === "invisible") {
+			return true;
+		} else {
+			return null;
+		}
+	},
 	navToggle: () => {
 		if (Session.get('nav-toggle')) {
 			return 'nav-open'

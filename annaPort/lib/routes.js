@@ -8,7 +8,6 @@ FlowRouter.route('/', {
 FlowRouter.route('/new-project', {
 	name: 'new-project',
 	action() {
-		console.log(Meteor.user());
 		if (!Meteor.userId()) {
 			FlowRouter.go('home-about');
 		} else {

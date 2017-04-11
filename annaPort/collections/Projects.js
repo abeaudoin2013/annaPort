@@ -50,12 +50,13 @@ ProjectSchema = new SimpleSchema({
         	height: 300,
         	toolbar: [
 				    ['style', ['bold', 'italic', 'underline', 'clear']],
-				    ['font', ['strikethrough', 'superscript', 'subscript']],
+				    ['font', ['strikethrough', 'superscript', 'subscript', 'fontname']],
 				    ['fontsize', ['fontsize']],
 				    ['color', ['color']],
 				    ['para', ['ul', 'ol', 'paragraph']],
 				    ['height', ['height']]
-				  ]
+				  ],
+				  fontNames: ['Oxygen']
         }
       }
     }
@@ -81,6 +82,11 @@ ProjectSchema = new SimpleSchema({
         collection: 'Images'
       }
     }
+  },
+  isVisible: {
+  	type: String,
+  	label: "Make invisible? *This will only hide project on navigation*",
+  	allowedValues: ["visible", "invisible"]
   }
 });
 
