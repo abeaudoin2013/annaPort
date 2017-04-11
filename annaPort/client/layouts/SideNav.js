@@ -4,12 +4,16 @@ Template.SideNav.onCreated(function () {
 	Session.set('nav-toggle', false);
 	self.autorun(function () {
 		self.subscribe('projects');
+		self.subscribe('about');
 	});
 });
 
 Template.SideNav.helpers({
 	projects: () => {
 	  return Projects.find({});
+	},
+	about: () => {
+		return About.findOne({});
 	},
 	admin: () => {
 		return Roles.userIsInRole(Meteor.userId(), 'admin');
@@ -78,5 +82,23 @@ Template.SideNav.events({
 	},
 	'click .side-nav': function () {
 		Session.set('nav-toggle', !Session.get('nav-toggle'))
+	},
+	'click #about': function (e) {
+		e.stopPropagation();
+
+		if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+			Session.set('about-me', !Session.get('about-me'));
+			if (Session.get('about-me')) {
+				$(e.target).next(".update-about-container").show();
+			} else {
+				$(e.target).next(".update-about-container").hide();	
+			}
+		} 
+	},
+	'click #updateAboutForm': function (e) {
+		e.stopPropagation();
+	},
+	'click #about-title': function (e) {
+		e.stopPropagation();
 	}
 });

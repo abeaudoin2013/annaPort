@@ -20,6 +20,13 @@
 				</div>
 
 				<li><a href="/contact">Contact</a></li>
+				<div class="about-container">
+					<li id="about-title">about</li>
+					<p id="about">{{about.about}}</p>
+					<div class="update-about-container">
+						{{> quickForm id="updateAboutForm" collection="About" type="update" doc=about}}
+					</div>
+				</div>
 				
 				{{#if admin}}
 				  <div class="anna-box">

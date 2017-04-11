@@ -33,3 +33,36 @@
 	  transform rotate(25deg)
 	  float left
 	  display inline-block
+  .active
+    animation active .5s forwards
+    position fixed
+    top 0
+    z-index 1000
+    width 100% !important
+    left 0
+    height 100vh
+    .background-images
+      animation picture-rotate .5s forwards, picture-grow .75s forwards, picture-height .5s forwards
+      background-size contain !important
+      float none
+      display block
+      margin-left auto
+      margin-right auto
+  .inactive
+    .background-images
+      animation slide-down .5s forwards
+  .in-between
+    position fixed
+    top 0
+    left 0
+    height 100vh
+    width 100%
+    z-index 1000
+    animation inactive .5s forwards
+    .background-images
+      animation picture-slide-out .5s ease-out forwards
+      margin-left auto
+      margin-right auto
+      float none
+      background-size cover !important
+      display block

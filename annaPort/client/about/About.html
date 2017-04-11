@@ -1,13 +1,11 @@
 <template name="About">
 	<div id="main">
 		<div class="about name">Anna Lublina</div>
-		<div class="about description">
-			Anna Lublina bases her work on the history of performance and conceptual art history but also on ideals of collective, community based work. She has worked with the Ping + Chong Theatre Company, the Wooster Group, the Motor Company, Built for Collapse, Bread and Puppet, and Errantes in Bogota, Colombia.
-		</div>
 		<div class="background-image-container">
 			{{#each images}}
-
-				<div class="background-images" style="background: url({{fileURL this}}); background-repeat: no-repeat; background-size: cover; background-position: center; width: {{percentage}}"></div>
+			  <div class="individual-background-image-container inactive">
+					<div class="background-images" style="background: url({{fileURL this}}); background-repeat: no-repeat; background-size: cover; background-position: center; width: {{percentage}}"></div>
+				</div>
 			<!-- <iframe src="//giphy.com/embed/MpeOSiDpqOfS0" width="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/scorpiondagger-scorpiondagger-jesus-dj-MpeOSiDpqOfS0">via GIPHY</a></p> -->
 			{{/each}}
 		</div>
