@@ -1,6 +1,6 @@
 Images = new FilesCollection({
   collectionName: 'Images',
-  // storagePath: '/images',
+  storagePath: '/images',
   allowClientCode: true, // Required to let you remove uploaded file
   permissions: 0774,
 	parentDirPermissions: 0774,

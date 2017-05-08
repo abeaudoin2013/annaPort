@@ -1,0 +1,6 @@
+<template name="AboutCreate">
+	<p>jafjaklsdf</p>
+	{{#if isInRole 'admin'}}
+		{{> quickForm id="insertAboutForm" collection="About" type="insert"}}
+	{{/if}}
+</template>

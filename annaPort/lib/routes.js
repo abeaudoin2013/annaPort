@@ -47,10 +47,17 @@ adminRoutes.route('/dashboard', {
 	action() {
 		BlazeLayout.render('MainLayout', {main: 'Dashboard'})
 	}
-})
+});
 
 adminRoutes.route('/images-manager', {
 	action() {
 		BlazeLayout.render('MainLayout', {main: 'ImageManager'})
 	}
-})
+});
+
+adminRoutes.route('/about-create', {
+	name: 'about-create',
+	action() {
+		BlazeLayout.render('MainLayout', {main: 'AboutCreate'})
+	}
+});

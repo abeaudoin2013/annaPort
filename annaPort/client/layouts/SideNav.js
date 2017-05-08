@@ -13,7 +13,7 @@ Template.SideNav.helpers({
 	  return Projects.find({});
 	},
 	about: () => {
-		return About.findOne({});
+		return About.findOne({}, {sort: {createdAt: -1, limit: 1}});
 	},
 	admin: () => {
 		return Roles.userIsInRole(Meteor.userId(), 'admin');
